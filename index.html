@@ -7,13 +7,48 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <img src="assets/gallery1.png" alt="A professional portrait of the user" class="profile-image">
-        <h1>Jane Doe</h1>
-        <p>Web Developer & Designer | Hosted on GitHub Pages</p>
-        <button id="contactButton">Contact Me</button>
-    </div>
-    
+    <header>
+        <div class="container">
+            <img src="assets/gallery1.png" alt="A professional portrait of the user" class="profile-image">
+            <h1>Jane Doe</h1>
+            <p class="tagline">Crafting digital experiences that inspire.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="about">
+            <h2>About Me</h2>
+            <p>I'm Jane, a passionate web developer and designer with a love for clean code and beautiful interfaces. I specialize in building responsive, user-friendly websites and web apps that make an impact.</p>
+        </section>
+
+        <section class="projects">
+            <h2>Featured Projects</h2>
+            <div class="project-list">
+                <div class="project">
+                    <img src="assets/gallery1.png" alt="Project screenshot" class="project-image">
+                    <h3>Portfolio Website</h3>
+                    <p>A modern, responsive portfolio to showcase my work and skills.</p>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+                <div class="project">
+                    <img src="assets/pic1.jpg" alt="Project screenshot" class="project-image">
+                    <h3>Creative Blog</h3>
+                    <p>A blog platform for sharing ideas, tutorials, and inspiration with the world.</p>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2>Contact</h2>
+            <p>Let's connect! Reach me at <a href="mailto:jane.doe@example.com">jane.doe@example.com</a> or find me on <a href="#">LinkedIn</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Jane Doe. Hosted on GitHub Pages.</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
