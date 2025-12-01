@@ -1,68 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Profile</title>
-    <link rel="stylesheet" href="style.css">
+    <title>VideoParachute Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="fonts.googleapis.com" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <img src="assets/logo.png" alt="UnBalanced Load Productions Logo" class="logo-image">
-            <h1>UnBalanced Load Productons</h1>
-            <p class="tagline">SHUTUP!! JERK!!.</p>
-        </div>
-    </header>
+    <div class="video-background">
+        <!-- The video element for the background -->
+        <video autoplay loop muted playsinline poster="fallback-image.jpg">
+            <source src="background.mp4" type="video/mp4">
+            <!-- Fallback text for browsers that don't support the video tag -->
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
-    <main>
-        <section class="synopsis">
-            <h2>Synopsis</h2>
-            <p>In a city where secrets run deep, one detective must solve the case that will change everything. <br><em>Show Title Here</em> is a thrilling new series full of twists, suspense, and unf[...]</p>
-        </section>
-
-        <section class="cast">
-            <h2>Cast & Crew</h2>
-            <div class="cast-list">
-                <div class="cast-member">
-                    <img src="assets/phelps1.png" alt="Cast member photo" class="cast-image">
-                    <h3>Supporting Actor Name</h3>
-                    <p>as Officer John Doe</p>
-                </div>
-                <!-- Add more cast as needed -->
+    <!-- Content Overlay -->
+    <div class="content-overlay">
+        <header>
+            <div class="container nav-container">
+                <div class="logo">Video<span class="highlight">Parachute</span></div>
+                <nav>
+                    <a href="#">Work</a>
+                    <a href="#">Services</a>
+                    <a href="#">Contact</a>
+                </nav>
             </div>
-        </section>
+        </header>
 
-        <section class="gallery">
-            <h2>Gallery</h2>
-            <div class="gallery-list">
-                <img src="assets/gallery1.png" alt="Show still 1" class="gallery-image">
-                <img src="assets/pic1.jpg" alt="Show still 2" class="gallery-image">
-                <!-- Add more images as needed -->
+        <main class="hero-main">
+            <div class="container hero-container">
+                <h1>We Help Brands Tell Their Stories Through <span class="highlight">Video</span>.</h1>
+                <a href="#" class="cta-button">View Our Work</a>
+
+
+
+
+
+
+
+
+
+
             </div>
-        </section>
-
-        <section class="broadcast">
-            <h2>Broadcast Info</h2>
-            <p><strong>Premieres:</strong> January 1, 2026<br>
-            <strong>Where to Watch:</strong> Channel Name / Streaming Service</p>
-        </section>
-
-        <section class="contact">
-            <h2>Contact & Social</h2>
-            <p>For press and inquiries: <a href="mailto:info@show.com">info@show.com</a></p>
-            <p>
-                <a href="#">Instagram</a> |
-                <a href="#">Twitter</a> |
-                <a href="#">Facebook</a>
-            </p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Show Title Here. Hosted on GitHub Pages.</p>
-    </footer>
-
-    <script src="script.js"></script>
+        </main>
+    </div>
 </body>
 </html>
