@@ -1,0 +1,9 @@
+title: Cheeky Pint (Your Show)
+description: "Short show description"
+url: https://YOURNAME.github.io
+baseurl: /YOURREPO   # leave blank "" if it’s a user/org site
+
+collections:
+  episodes:
+    output: true
+    permalink: /episodes/:name/
