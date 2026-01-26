@@ -1,18 +1,24 @@
 <!doctype html>
 <html>
   <head>
+    <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ page.title }} · {{ site.title }}</title>
   </head>
   <body>
     <header>
+  <div class="hero">
+    <img src="{{ '/assets/gallery1.png' | relative_url }}" alt="Cover art">
+    <div>
       <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+      <p>{{ site.description }}</p>
       <nav>
         <a href="{{ '/episodes/' | relative_url }}">Episodes</a>
       </nav>
-      <hr />
-    </header>
+    </div>
+  </div>
+</header>
 
     <main>
       {{ content }}
