@@ -1,7 +1,7 @@
 title: UnBalanced Load Productions
 description: "UnBalanced Load Productions"
 url: https://fpkmedia.github.io
-baseurl: /YOURREPO   # leave blank "" if it’s a user/org site
+baseurl:    # leave blank "" if it’s a user/org site
 theme: jekyll-theme-cayman
 
 
