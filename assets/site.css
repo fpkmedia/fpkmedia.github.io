@@ -155,5 +155,12 @@ audio{
   .cover{width: 110px; height:110px; border-radius: 18px}
   .h-title{font-size: 28px}
 }
+.ep-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+.ep-actions{flex:0 0 auto}
 
 
