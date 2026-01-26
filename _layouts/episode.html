@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+<p><strong>{{ page.date | date: "%B %-d, %Y" }}</strong> • {{ page.duration }}</p>
+
+<audio controls preload="none" style="width:100%;">
+  <source src="{{ page.audio_url }}" type="audio/mpeg">
+</audio>
+
+<div>
+  {{ content }}
+</div>
