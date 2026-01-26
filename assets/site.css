@@ -1,101 +1,186 @@
+/* =========================================================
+   Global variables (LIGHT THEME)
+   ========================================================= */
 :root{
-  --bg:#0b0b0f;
-  --panel:#12121a;
-  --card:#151521;
-  --text:#f2f2f4;
-  --muted:#b7b7c2;
-  --line:#242436;
-  --accent:#7c5cff;
+  --bg:#ffffff;
+  --panel:#ffffff;
+  --card:#ffffff;
+  --text:#111111;
+  --muted:#60606f;
+  --line:#e8e8ef;
+  --accent:#2a66ff;
   --max: 980px;
   --radius: 18px;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
+/* =========================================================
+   Reset / base
+   ========================================================= */
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+
 body{
   margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   line-height:1.55;
-  background: radial-gradient(900px 500px at 25% -10%, rgba(124,92,255,.25), transparent 55%),
-              radial-gradient(900px 500px at 80% 0%, rgba(98,208,255,.18), transparent 55%),
-              var(--bg);
-  color:var(--text);
+  background: var(--bg);
+  color: var(--text);
 }
 
-a{color:inherit; text-decoration:none}
-a:hover{color:#fff}
-.wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+a{
+  color: inherit;
+  text-decoration: none;
+}
+a:hover{
+  color: var(--accent);
+}
 
+.wrap{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+/* =========================================================
+   Top navigation (Transistor-like)
+   ========================================================= */
 .topbar{
-  position:sticky; top:0; z-index:10;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255,255,255,.88);
   backdrop-filter: blur(10px);
-  background: rgba(11,11,15,.72);
-  border-bottom: 1px solid rgba(36,36,54,.7);
+  border-bottom: 1px solid var(--line);
 }
+
 .topbar-inner{
-  display:flex; align-items:center; justify-content:space-between;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
   padding:14px 0;
 }
-.brand{
-  display:flex; align-items:center; gap:10px; font-weight:650; letter-spacing:.2px;
-}
-.brand-dot{
-  width:10px; height:10px; border-radius:50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 4px rgba(124,92,255,.18);
-}
-.nav a{color:var(--muted); margin-left:14px; font-weight:550}
-.nav a:hover{color:var(--text)}
 
-.hero{
-  padding:34px 0 18px;
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:650;
+  letter-spacing:.2px;
 }
+
+.brand-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(42,102,255,.18);
+}
+
+.nav a{
+  margin-left:14px;
+  font-weight:550;
+  color: var(--muted);
+}
+.nav a:hover{
+  color: var(--text);
+}
+
+/* =========================================================
+   Hero (show header)
+   ========================================================= */
+.hero{
+  padding: 32px 0 18px;
+}
+
 .hero-card{
-  background: linear-gradient(180deg, rgba(18,18,26,.92), rgba(18,18,26,.72));
-  border: 1px solid rgba(36,36,54,.85);
+  background: var(--panel);
+  border: 1px solid var(--line);
   border-radius: calc(var(--radius) + 6px);
-  padding:22px;
-  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+  padding: 22px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.08);
   display:grid;
   grid-template-columns: 140px 1fr;
   gap:18px;
 }
-.cover{
-  width:140px; height:140px; border-radius: 20px;
-  object-fit: cover;
-  border: 1px solid rgba(255,255,255,.08);
-}
-.h-title{margin:0; font-size: 34px; line-height:1.12}
-.h-desc{margin:10px 0 0; color:var(--muted); max-width: 70ch}
-.hero-actions{margin-top:14px; display:flex; flex-wrap:wrap; gap:10px}
 
+.cover{
+  width:140px;
+  height:140px;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
+.h-title{
+  margin:0;
+  font-size: 34px;
+  line-height:1.12;
+}
+
+.h-desc{
+  margin:10px 0 0;
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+.hero-actions{
+  margin-top:14px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+/* =========================================================
+   Buttons
+   ========================================================= */
 .btn{
-  display:inline-flex; align-items:center; justify-content:center;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   padding:10px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(36,36,54,.95);
-  background: rgba(21,21,33,.85);
+  border: 1px solid var(--line);
+  background: #f6f6fb;
   color: var(--text);
   font-weight: 650;
   letter-spacing:.2px;
 }
-.btn:hover{border-color: rgba(124,92,255,.8)}
-.btn.primary{
-  background: linear-gradient(180deg, rgba(124,92,255,1), rgba(124,92,255,.78));
-  border-color: rgba(124,92,255,.9);
-  color:#0b0b0f;
-}
-.btn.ghost{background: transparent; color: var(--muted)}
-.btn.ghost:hover{color:var(--text); border-color: rgba(255,255,255,.18)}
 
-main{padding: 18px 0 60px}
+.btn:hover{
+  border-color: rgba(42,102,255,.55);
+}
+
+.btn.primary{
+  background: var(--accent);
+  border-color: var(--accent);
+  color:#ffffff;
+}
+
+.btn.ghost{
+  background: transparent;
+  color: var(--muted);
+}
+.btn.ghost:hover{
+  color: var(--text);
+  border-color: rgba(0,0,0,.12);
+}
+
+/* =========================================================
+   Main content
+   ========================================================= */
+main{
+  padding: 18px 0 60px;
+}
+
 .section-title{
   margin: 22px 0 12px;
   font-size: 18px;
   letter-spacing:.2px;
-  color: var(--text);
 }
 
+/* =========================================================
+   Episode list (Transistor-style cards)
+   ========================================================= */
 .grid{
   display:grid;
   grid-template-columns: 1fr;
@@ -103,64 +188,130 @@ main{padding: 18px 0 60px}
 }
 
 .card{
-  background: rgba(21,21,33,.92);
-  border: 1px solid rgba(36,36,54,.95);
+  background: var(--card);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 14px 16px;
   transition: transform .08s ease, border-color .08s ease;
 }
-.card:hover{transform: translateY(-1px); border-color: rgba(124,92,255,.55)}
-.card-title{font-size: 18px; font-weight: 720; margin:0}
-.meta{margin-top:6px; color: var(--muted); font-size: 13px}
-.summary{margin-top:10px; color: var(--muted)}
-.pillrow{margin-top:10px; display:flex; gap:10px; flex-wrap:wrap}
 
-.pill{
-  padding:6px 10px;
-  border: 1px solid rgba(36,36,54,.95);
-  border-radius: 999px;
-  color: var(--muted);
-  font-size: 12.5px;
-  background: rgba(18,18,26,.6);
+.card:hover{
+  transform: translateY(-1px);
+  border-color: rgba(42,102,255,.35);
 }
 
+.card-title{
+  font-size: 18px;
+  font-weight: 720;
+  margin:0;
+}
+
+.meta{
+  margin-top:6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.summary{
+  margin-top:10px;
+  color: var(--muted);
+}
+
+/* =========================================================
+   Episode page
+   ========================================================= */
 .episode{
   max-width: 760px;
 }
+
 audio{
   width:100%;
   margin: 14px 0 10px;
   border-radius: 12px;
 }
 
-.content h2, .content h3{margin-top:18px}
-.content p, .content li{color: var(--text)}
-.content a{color: #b8a7ff; text-decoration: underline; text-decoration-color: rgba(184,167,255,.4)}
-.content a:hover{color:#fff; text-decoration-color: rgba(255,255,255,.6)}
-
-.footer{
-  margin-top: 26px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(36,36,54,.85);
-  color: var(--muted);
-  font-size: 13px;
-}
-
-@media (min-width: 860px){
-  .grid{grid-template-columns: 1fr}
-}
-
-@media (max-width: 640px){
-  .hero-card{grid-template-columns: 1fr}
-  .cover{width: 110px; height:110px; border-radius: 18px}
-  .h-title{font-size: 28px}
-}
+/* =========================================================
+   Episode header row (home page)
+   ========================================================= */
 .ep-head{
   display:flex;
   align-items:flex-start;
   justify-content:space-between;
   gap:12px;
 }
-.ep-actions{flex:0 0 auto}
+.ep-actions{
+  flex:0 0 auto;
+}
+
+/* =========================================================
+   Pills / metadata
+   ========================================================= */
+.pillrow{
+  margin-top:10px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.pill{
+  padding:6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 12.5px;
+  background: #f6f6fb;
+}
+
+/* =========================================================
+   Rich content (show notes)
+   ========================================================= */
+.content h2,
+.content h3{
+  margin-top:18px;
+}
+
+.content p,
+.content li{
+  color: var(--text);
+}
+
+.content a{
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(42,102,255,.35);
+}
+.content a:hover{
+  color:#1a4fe0;
+  text-decoration-color: rgba(26,79,224,.5);
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+.footer{
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* =========================================================
+   Responsive tweaks
+   ========================================================= */
+@media (max-width: 640px){
+  .hero-card{
+    grid-template-columns: 1fr;
+  }
+  .cover{
+    width:110px;
+    height:110px;
+    border-radius:18px;
+  }
+  .h-title{
+    font-size:28px;
+  }
+}
+
 
 
