@@ -9,3 +9,10 @@ collections:
   episodes:
     output: true
     permalink: /episodes/:name/
+    
+podcast_category: "Comedy"
+podcast_frequency: "Weekly"
+podcast_email: "hello@example.com"
+social_homepage: ""
+
+    
