@@ -1,13 +1,25 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
-<p><strong>{{ page.date | date: "%B %-d, %Y" }}</strong> • {{ page.duration }}</p>
+<div class="episode">
+  <h1 class="card-title" style="font-size:28px; margin-top:6px;">{{ page.title }}</h1>
+  <div class="meta">
+    {{ page.date | date: "%B %-d, %Y" }}
+    {% if page.duration %} · {{ page.duration }}{% endif %}
+    {% if page.episode %} · Episode {{ page.episode }}{% endif %}
+  </div>
 
-<audio controls preload="none" style="width:100%;">
-  <source src="{{ page.audio_url }}" type="audio/mpeg">
-</audio>
+  {% if page.audio_url %}
+    <audio controls preload="none">
+      <source src="{{ page.audio_url }}" type="audio/mpeg">
+    </audio>
+  {% endif %}
 
-<div>
-  {{ content }}
+  {% if page.summary %}
+    <div class="summary">{{ page.summary }}</div>
+  {% endif %}
+
+  <div class="content">
+    {{ content }}
+  </div>
 </div>
