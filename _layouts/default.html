@@ -1,27 +1,59 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ page.title }} · {{ site.title }}</title>
+    <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ site.description | escape }}" />
+    <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
   </head>
   <body>
-    <header>
-  <div class="hero">
-    <img src="{{ '/assets/gallery1.png' | relative_url }}" alt="Cover art">
-    <div>
-      <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-      <p>{{ site.description }}</p>
-      <nav>
-        <a href="{{ '/episodes/' | relative_url }}">Episodes</a>
-      </nav>
+    <div class="topbar">
+      <div class="wrap topbar-inner">
+        <a class="brand" href="{{ '/' | relative_url }}">
+          <span class="brand-dot"></span>
+          <span>{{ site.title }}</span>
+        </a>
+        <div class="nav">
+          <a href="{{ '/episodes/' | relative_url }}">Episodes</a>
+          <a href="{{ '/subscribe/' | relative_url }}">Subscribe</a>
+        </div>
+      </div>
     </div>
-  </div>
-</header>
 
-    <main>
-      {{ content }}
-    </main>
+    <div class="wrap">
+      {% if page.url == "/" or page.layout == "home" %}
+      <section class="hero">
+        <div class="hero-card">
+          <img class="cover" src="{{ '/assets/cover.jpg' | relative_url }}" alt="Show cover art" />
+          <div>
+            <h1 class="h-title">{{ site.title }}</h1>
+            <p class="h-desc">{{ site.description }}</p>
+
+            <div class="hero-actions">
+              <a class="btn primary" href="{{ '/episodes/' | relative_url }}">Listen to episodes</a>
+              <a class="btn" href="{{ '/subscribe/' | relative_url }}">Subscribe</a>
+              {% if site.social_homepage %}
+                <a class="btn ghost" href="{{ site.social_homepage }}">Website</a>
+              {% endif %}
+            </div>
+
+            <div class="pillrow">
+              {% if site.podcast_category %}<span class="pill">{{ site.podcast_category }}</span>{% endif %}
+              {% if site.podcast_frequency %}<span class="pill">{{ site.podcast_frequency }}</span>{% endif %}
+              {% if site.podcast_email %}<span class="pill">{{ site.podcast_email }}</span>{% endif %}
+            </div>
+          </div>
+        </div>
+      </section>
+      {% endif %}
+
+      <main>
+        {{ content }}
+        <div class="footer">
+          © {{ site.time | date: "%Y" }} {{ site.title }} · Built on GitHub Pages
+        </div>
+      </main>
+    </div>
   </body>
 </html>
